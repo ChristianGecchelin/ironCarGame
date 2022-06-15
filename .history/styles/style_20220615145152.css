@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-family: sans-serif;
+}
+body {
+  background-color: #78909c;
+}
+.game-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0% 10%;
+  height: 100vh;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+canvas {
+  height: 80vh;
+  width: 700px;
+  background-image: url("../images/road.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 15vh;
+  width: 700px;
+}
+.information {
+  width: 100%;
+  font-size: 30px;
+  margin: 0;
+}
+
+.game-intro p {
+  font-size: 18px;
+  font-family: "Verdana";
+}
+
+.logo-img {
+  width: 350px;
+}
+
+.arrows-img {
+  width: 150px;
+}
+
+body button {
+  font-size: 30px;
+  background-color: #c42830;
+  color: #fff;
+  padding: 20px 40px;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.button {
+  font-size: 30px;
+  background-color: #870007;
+  color: #fff;
+  padding: 20px 40px;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#game-board {
+  float: left;
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#endScreen {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 500px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+#canvas {
+  border: 1px solid black;
+}
+
+#endScreen {
+  position: absolute;
+}
+
+.redText {
+  color: red;
+  font-weight: bolder;
+}
+#placeHolderImg {
+  width: 500px;
+  height: 700px;
+  position: absolute;
+  display: none;
+  background-image: url("./../images/road2.png");
+  background-repeat: no-repeat;
+  background-size: 500px 700px;
+}
+
+.divInstructions {
+  margin: 0 auto;
+  width: 50%;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  padding: 20px 20px;
+}
+.altavoz {
+  width: 100px;
+  height: 50px;
+}
+
+/* Class preventing pointer events while moving the car */
+.noPointers {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

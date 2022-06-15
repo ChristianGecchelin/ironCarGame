@@ -1,0 +1,1 @@
+let mainSound = new Audio();

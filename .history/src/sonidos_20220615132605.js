@@ -1,0 +1,3 @@
+detenerSonido = () => {
+  mainSound.paused();
+};
