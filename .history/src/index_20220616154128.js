@@ -18,6 +18,7 @@ const ambulancia = () => {
 };
 const gameOverSound = () => {
   sonidoGameOver.volume = 1;
+  sonidoGameOver.loop = false;
   sonidoGameOver.play();
 };
 const policia = () => {
@@ -105,8 +106,6 @@ const detenerJuego = () => {
   if (!jugando) {
     clearInterval(iniciarJuego);
     clearInterval(sumPuntos);
-    clearInterval(crearObj);
-    clearInterval(terminarFuel);
   }
 };
 
@@ -147,15 +146,13 @@ const reducirFuel = () => {
 };
 let iniciarJuego = setInterval(jugar, 50);
 let sumPuntos = setInterval(sumarPuntos, 2000);
-let terminarFuel = setInterval(reducirFuel, 1000);
-let crearObj = setInterval(createObjects, 1250);
 //Funcion que se ejecuta con la carga de pagina
 const cargaInicial = () => {
   player.dibujar();
   iniciarJuego;
-  crearObj;
+  setInterval(createObjects, 1250);
   sumPuntos;
-  terminarFuel;
+  setInterval(reducirFuel, 1000);
 };
 
 window.addEventListener("load", cargaInicial);

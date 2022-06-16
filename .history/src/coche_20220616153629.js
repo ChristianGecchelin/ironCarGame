@@ -38,31 +38,24 @@ class Objeto {
       objeto.borrar();
       if (this.lives > 1) {
         if (objeto.id === 1) {
-          policia();
           this.lives--;
           lives.innerText = `Vidas: ${this.lives}`;
         } else if (objeto.id === 2) {
-          ambulancia();
           this.fuel += 10;
           this.lives += 1;
           lives.innerText = `Vidas: ${this.lives}`;
           fuel.innerText = `Fuel: ${this.fuel}`;
         } else if (objeto.id === 4) {
-          debugger;
           jugando = false;
           detenerSonido(mainSound);
-          gameOverSound();
-          detenerSonido(gameOverSound);
+          gameOver();
           detenerJuego();
           puntuacionFinal.innerText = `Puntuación Final ~ ${this.points}`;
           gameOver.classList.remove("hidden");
         }
       } else {
-        debugger;
         jugando = false;
         detenerSonido(mainSound);
-        gameOverSound();
-        detenerSonido(gameOverSound);
         detenerJuego();
         puntuacionFinal.innerText = `Puntuación Final ~ ${this.points}`;
         gameOver.classList.remove("hidden");

@@ -48,17 +48,14 @@ class Objeto {
           lives.innerText = `Vidas: ${this.lives}`;
           fuel.innerText = `Fuel: ${this.fuel}`;
         } else if (objeto.id === 4) {
-          debugger;
           jugando = false;
           detenerSonido(mainSound);
           gameOverSound();
-          detenerSonido(gameOverSound);
           detenerJuego();
           puntuacionFinal.innerText = `Puntuación Final ~ ${this.points}`;
           gameOver.classList.remove("hidden");
         }
       } else {
-        debugger;
         jugando = false;
         detenerSonido(mainSound);
         gameOverSound();

@@ -48,7 +48,6 @@ class Objeto {
           lives.innerText = `Vidas: ${this.lives}`;
           fuel.innerText = `Fuel: ${this.fuel}`;
         } else if (objeto.id === 4) {
-          debugger;
           jugando = false;
           detenerSonido(mainSound);
           gameOverSound();
@@ -58,7 +57,6 @@ class Objeto {
           gameOver.classList.remove("hidden");
         }
       } else {
-        debugger;
         jugando = false;
         detenerSonido(mainSound);
         gameOverSound();

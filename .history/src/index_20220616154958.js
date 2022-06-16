@@ -131,6 +131,7 @@ const sumarPuntos = () => {
   puntuacion.innerText = `${player.points} Puntos`;
 };
 const reducirFuel = () => {
+  debugger;
   if (player.fuel > 0) {
     player.fuel -= 5;
   } else {

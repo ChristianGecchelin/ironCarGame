@@ -2,26 +2,27 @@ const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 //Sonidos
 let mainSound = new Audio("./audios/carrera.mp3");
-let sonidoAmbulancia = new Audio("./audios/ambulancia.mp3");
+let sonidoAmbulancia = new Audio("./audio/ambulancia.mp3");
 let sonidoGameOver = new Audio("./audios/gameover.mp3");
 let sonidoPolicia = new Audio("./audios/police.mp3");
 const inicioCarrera = () => {
-  mainSound.volume = 0.1;
+  mainSound.volume = 0.3;
   mainSound.duration = 30;
   mainSound.loop = true;
   mainSound.play();
 };
 const ambulancia = () => {
-  sonidoAmbulancia.volume = 1;
+  sonidoAmbulancia.volume = 0.8;
   sonidoAmbulancia.loop = false;
   sonidoAmbulancia.play();
 };
-const gameOverSound = () => {
-  sonidoGameOver.volume = 1;
+const gameOver = () => {
+  sonidoGameOver.volume = 0.8;
+  sonidoGameOver.loop = false;
   sonidoGameOver.play();
 };
 const policia = () => {
-  sonidoPolicia.volume = 1;
+  sonidoPolicia.volume = 0.8;
   sonidoPolicia.loop = false;
   sonidoPolicia.play();
 };
@@ -105,8 +106,6 @@ const detenerJuego = () => {
   if (!jugando) {
     clearInterval(iniciarJuego);
     clearInterval(sumPuntos);
-    clearInterval(crearObj);
-    clearInterval(terminarFuel);
   }
 };
 
@@ -136,9 +135,8 @@ const reducirFuel = () => {
   } else {
     debugger;
     detenerSonido(mainSound);
-    gameOverSound();
+    gameOver();
     jugando = false;
-    detenerSonido(gameOverSound);
     detenerJuego();
     puntuacionFinal.innerText = `Puntuación Final ~ ${player.points}`;
     gameOver.classList.remove("hidden");
@@ -147,15 +145,13 @@ const reducirFuel = () => {
 };
 let iniciarJuego = setInterval(jugar, 50);
 let sumPuntos = setInterval(sumarPuntos, 2000);
-let terminarFuel = setInterval(reducirFuel, 1000);
-let crearObj = setInterval(createObjects, 1250);
 //Funcion que se ejecuta con la carga de pagina
 const cargaInicial = () => {
   player.dibujar();
   iniciarJuego;
-  crearObj;
+  setInterval(createObjects, 1250);
   sumPuntos;
-  terminarFuel;
+  setInterval(reducirFuel, 1000);
 };
 
 window.addEventListener("load", cargaInicial);

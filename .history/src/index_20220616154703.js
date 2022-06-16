@@ -105,8 +105,6 @@ const detenerJuego = () => {
   if (!jugando) {
     clearInterval(iniciarJuego);
     clearInterval(sumPuntos);
-    clearInterval(crearObj);
-    clearInterval(terminarFuel);
   }
 };
 

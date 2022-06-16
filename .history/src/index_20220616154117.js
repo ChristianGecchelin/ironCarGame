@@ -2,7 +2,7 @@ const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 //Sonidos
 let mainSound = new Audio("./audios/carrera.mp3");
-let sonidoAmbulancia = new Audio("./audios/ambulancia.mp3");
+let sonidoAmbulancia = new Audio("./audio/ambulancia.mp3");
 let sonidoGameOver = new Audio("./audios/gameover.mp3");
 let sonidoPolicia = new Audio("./audios/police.mp3");
 const inicioCarrera = () => {
@@ -18,6 +18,7 @@ const ambulancia = () => {
 };
 const gameOverSound = () => {
   sonidoGameOver.volume = 1;
+  sonidoGameOver.loop = false;
   sonidoGameOver.play();
 };
 const policia = () => {
@@ -105,8 +106,6 @@ const detenerJuego = () => {
   if (!jugando) {
     clearInterval(iniciarJuego);
     clearInterval(sumPuntos);
-    clearInterval(crearObj);
-    clearInterval(terminarFuel);
   }
 };
 
@@ -147,15 +146,13 @@ const reducirFuel = () => {
 };
 let iniciarJuego = setInterval(jugar, 50);
 let sumPuntos = setInterval(sumarPuntos, 2000);
-let terminarFuel = setInterval(reducirFuel, 1000);
-let crearObj = setInterval(createObjects, 1250);
 //Funcion que se ejecuta con la carga de pagina
 const cargaInicial = () => {
   player.dibujar();
   iniciarJuego;
-  crearObj;
+  setInterval(createObjects, 1250);
   sumPuntos;
-  terminarFuel;
+  setInterval(reducirFuel, 1000);
 };
 
 window.addEventListener("load", cargaInicial);
