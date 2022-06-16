@@ -40,7 +40,7 @@ const createEnemies = () => {
       100,
       bossImage,
       ctx,
-      Math.floor(Math.random() * (30 - 25) + 25)
+      Math.floor(Math.random() * (20 - 18) + 18)
     );
     objects.push(boss);
   } else if (randomNumber >= 3) {

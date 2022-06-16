@@ -1,6 +1,5 @@
 class Objeto {
-  constructor(id, x, y, ancho, alto, imagen, ctx, step) {
-    this.id = id;
+  constructor(x, y, ancho, alto, imagen, ctx, step) {
     this.x = x;
     this.y = y;
     this.ancho = ancho;
@@ -31,20 +30,18 @@ class Objeto {
       this.y < objeto.y + objeto.alto &&
       this.alto + this.y > objeto.y
     ) {
-      console.log(objeto);
       const enemyIndex = objects.indexOf(objeto);
       objects.splice(enemyIndex, 1);
       objeto.borrar();
+
       if (this.lives > 1) {
-        if (objeto.id === 1) {
-          this.lives--;
-          lives.innerText = `Vidas: ${this.lives}`;
-        } else if (objeto.id === 2) {
-          this.lives += 1;
-          lives.innerText = `Vidas: ${this.lives}`;
-        } else if (objeto.id === 4) {
-          detenerSonido(mainSound);
-          alert("CuloRoto");
+        this.lives--;
+        if (this.lives === 3) {
+          lives.innerText = `Lives: ♥ ♥ ♥`;
+        } else if (this.lives === 2) {
+          lives.innerText = `Lives: ♥ ♥`;
+        } else {
+          lives.innerText = `Lives: ♥`;
         }
       } else {
         detenerSonido(mainSound);

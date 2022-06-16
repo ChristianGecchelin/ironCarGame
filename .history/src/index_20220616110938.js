@@ -14,38 +14,22 @@ const detenerSonido = (sonido) => {
 };
 
 //Creo elementos en canvas
-let objects = [];
+let enemies = [];
 let cochePlayer = new Image();
 cochePlayer.src = "./images/car.png";
 
-const player = new Objeto(3, 250, 600, 60, 100, cochePlayer, ctx, 7);
+const player = new Objeto(250, 600, 60, 100, cochePlayer, ctx, 7);
 
 let enemyImage = new Image();
 enemyImage.src = "./images/car2.png";
 
-let bossImage = new Image();
-bossImage.src = "./images/inicio.png";
-
 let ambulanceImage = new Image();
-ambulanceImage.src = "./images/ambulance.png";
+enemyImage.src = "./images/ambulance.png";
 
 const createEnemies = () => {
-  let randomNumber = Math.floor(Math.random() * (10 - 1) + 1);
-  if (randomNumber === 3) {
-    const boss = new Objeto(
-      4,
-      Math.floor(Math.random() * (400 - 50) + 50),
-      0,
-      60,
-      100,
-      bossImage,
-      ctx,
-      Math.floor(Math.random() * (30 - 25) + 25)
-    );
-    objects.push(boss);
-  } else if (randomNumber >= 3) {
+  let randomNumber = Math.floor(Math.random() * (2 - 1) + 1);
+  if (randomNumber === 1) {
     const enemy = new Objeto(
-      1,
       Math.floor(Math.random() * (400 - 50) + 50),
       0,
       60,
@@ -57,7 +41,6 @@ const createEnemies = () => {
     objects.push(enemy);
   } else {
     const ambulance = new Objeto(
-      2,
       Math.floor(Math.random() * (400 - 50) + 50),
       0,
       60,
@@ -73,7 +56,7 @@ const createEnemies = () => {
 //Funcion que hace funcionar el juego
 const jugar = () => {
   inicioCarrera();
-  for (let enemy of objects) {
+  for (let enemy of enemies) {
     enemy.borrar();
     enemy.y += enemy.step;
     enemy.dibujar();

@@ -33,16 +33,16 @@ const createEnemies = () => {
   let randomNumber = Math.floor(Math.random() * (10 - 1) + 1);
   if (randomNumber === 3) {
     const boss = new Objeto(
-      4,
+      1,
       Math.floor(Math.random() * (400 - 50) + 50),
       0,
       60,
       100,
       bossImage,
       ctx,
-      Math.floor(Math.random() * (30 - 25) + 25)
+      Math.floor(Math.random() * (20 - 18) + 18)
     );
-    objects.push(boss);
+    objects.push(enemy);
   } else if (randomNumber >= 3) {
     const enemy = new Objeto(
       1,

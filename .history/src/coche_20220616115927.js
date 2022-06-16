@@ -35,16 +35,13 @@ class Objeto {
       const enemyIndex = objects.indexOf(objeto);
       objects.splice(enemyIndex, 1);
       objeto.borrar();
+      debugger;
       if (this.lives > 1) {
         if (objeto.id === 1) {
           this.lives--;
           lives.innerText = `Vidas: ${this.lives}`;
         } else if (objeto.id === 2) {
           this.lives += 1;
-          lives.innerText = `Vidas: ${this.lives}`;
-        } else if (objeto.id === 4) {
-          detenerSonido(mainSound);
-          alert("CuloRoto");
         }
       } else {
         detenerSonido(mainSound);

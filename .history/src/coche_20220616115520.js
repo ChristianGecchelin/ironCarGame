@@ -35,20 +35,24 @@ class Objeto {
       const enemyIndex = objects.indexOf(objeto);
       objects.splice(enemyIndex, 1);
       objeto.borrar();
-      if (this.lives > 1) {
-        if (objeto.id === 1) {
-          this.lives--;
-          lives.innerText = `Vidas: ${this.lives}`;
-        } else if (objeto.id === 2) {
-          this.lives += 1;
-          lives.innerText = `Vidas: ${this.lives}`;
-        } else if (objeto.id === 4) {
-          detenerSonido(mainSound);
-          alert("CuloRoto");
+
+      if (this.lives > 1 && objeto.id === 1) {
+        debugger;
+
+        this.lives--;
+        if (this.lives === 3) {
+          lives.innerText = `Lives: ♥ ♥ ♥`;
+        } else if (this.lives === 2) {
+          lives.innerText = `Lives: ♥ ♥`;
+        } else {
+          lives.innerText = `Lives: ♥`;
         }
       } else {
         detenerSonido(mainSound);
         alert("CuloRoto");
+      }
+      if (this.lives > 1 && objeto.id === 2) {
+        this.lives += 1;
       }
     } else if (objeto.y > 600) {
       const enemyIndex = objects.indexOf(objeto);
