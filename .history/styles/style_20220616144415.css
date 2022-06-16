@@ -35,19 +35,6 @@ canvas {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.game-over {
-  gap: 15px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0 auto;
-  background-color: black;
-  width: 100%;
-}
-#score {
-  color: white;
-  font-size: 50px;
-}
 .hidden {
   display: none;
 }
@@ -129,7 +116,7 @@ body button {
 }
 
 .redText {
-  color: rgb(4, 0, 255);
+  color: red;
   font-weight: bolder;
 }
 #placeHolderImg {

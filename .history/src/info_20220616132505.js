@@ -18,6 +18,5 @@ mu.setAttribute("class", "musica");
 mu.setAttribute("src", "./images/altavoz.png");
 infoContainer.appendChild(mu); */
 let gameOver = document.querySelector(".game-over");
-
 let puntuacionFinal = document.querySelector("#score");
 puntuacionFinal.innerText = `Puntuación Final ~ ${points}`;

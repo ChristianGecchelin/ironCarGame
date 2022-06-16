@@ -44,20 +44,13 @@ class Objeto {
           this.fuel += 10;
           this.lives += 1;
           lives.innerText = `Vidas: ${this.lives}`;
-          fuel.innerText = `Fuel: ${this.fuel}`;
         } else if (objeto.id === 4) {
-          jugando = false;
           detenerSonido(mainSound);
-          detenerJuego();
-          puntuacionFinal.innerText = `Puntuación Final ~ ${this.points}`;
-          gameOver.classList.remove("hidden");
+          alert("CuloRoto");
         }
       } else {
-        jugando = false;
         detenerSonido(mainSound);
-        detenerJuego();
-        puntuacionFinal.innerText = `Puntuación Final ~ ${this.points}`;
-        gameOver.classList.remove("hidden");
+        alert("CuloRoto");
       }
     } else if (objeto.y > 600) {
       const enemyIndex = objects.indexOf(objeto);

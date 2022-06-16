@@ -21,7 +21,7 @@ body {
   height: 100vh;
 }
 .flex,
-.game-over {
+.game-ove {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -34,22 +34,6 @@ canvas {
   background-image: url("../images/road.png");
   background-size: cover;
   background-repeat: no-repeat;
-}
-.game-over {
-  gap: 15px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0 auto;
-  background-color: black;
-  width: 100%;
-}
-#score {
-  color: white;
-  font-size: 50px;
-}
-.hidden {
-  display: none;
 }
 .info {
   display: flex;
@@ -129,7 +113,7 @@ body button {
 }
 
 .redText {
-  color: rgb(4, 0, 255);
+  color: red;
   font-weight: bolder;
 }
 #placeHolderImg {

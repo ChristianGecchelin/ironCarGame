@@ -46,7 +46,6 @@ canvas {
 }
 #score {
   color: white;
-  font-size: 50px;
 }
 .hidden {
   display: none;
@@ -129,7 +128,7 @@ body button {
 }
 
 .redText {
-  color: rgb(4, 0, 255);
+  color: red;
   font-weight: bolder;
 }
 #placeHolderImg {

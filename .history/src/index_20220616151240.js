@@ -18,7 +18,7 @@ let objects = [];
 let cochePlayer = new Image();
 cochePlayer.src = "./images/car.png";
 
-const player = new Objeto(3, 250, 600, 60, 100, cochePlayer, ctx, 7, 100);
+const player = new Objeto(3, 250, 600, 60, 100, cochePlayer, ctx, 7, 10);
 
 let enemyImage = new Image();
 enemyImage.src = "./images/car2.png";
@@ -29,7 +29,7 @@ bossImage.src = "./images/inicio.png";
 let ambulanceImage = new Image();
 ambulanceImage.src = "./images/ambulance.png";
 
-const createObjects = () => {
+const createEnemies = () => {
   let randomNumber = Math.floor(Math.random() * (10 - 1) + 1);
   if (randomNumber === 3) {
     const boss = new Objeto(
@@ -87,8 +87,7 @@ let jugando = true;
 const detenerJuego = () => {
   debugger;
   if (!jugando) {
-    clearInterval(iniciarJuego);
-    clearInterval(sumPuntos);
+    clearInterval(cargaInicial);
   }
 };
 
@@ -131,7 +130,7 @@ let sumPuntos = setInterval(sumarPuntos, 2000);
 const cargaInicial = () => {
   player.dibujar();
   iniciarJuego;
-  setInterval(createObjects, 1250);
+  setInterval(createEnemies, 1250);
   sumPuntos;
   setInterval(reducirFuel, 1000);
 };

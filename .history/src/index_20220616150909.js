@@ -29,7 +29,7 @@ bossImage.src = "./images/inicio.png";
 let ambulanceImage = new Image();
 ambulanceImage.src = "./images/ambulance.png";
 
-const createObjects = () => {
+const createEnemies = () => {
   let randomNumber = Math.floor(Math.random() * (10 - 1) + 1);
   if (randomNumber === 3) {
     const boss = new Objeto(
@@ -87,8 +87,9 @@ let jugando = true;
 const detenerJuego = () => {
   debugger;
   if (!jugando) {
-    clearInterval(iniciarJuego);
-    clearInterval(sumPuntos);
+    clearInterval(sumarPuntos);
+    clearInterval(jugar);
+    clearInterval(reducirFuel);
   }
 };
 
@@ -125,14 +126,13 @@ const reducirFuel = () => {
   }
   fuel.innerText = `Fuel: ${player.fuel}`;
 };
-let iniciarJuego = setInterval(jugar, 50);
-let sumPuntos = setInterval(sumarPuntos, 2000);
+
 //Funcion que se ejecuta con la carga de pagina
 const cargaInicial = () => {
   player.dibujar();
-  iniciarJuego;
-  setInterval(createObjects, 1250);
-  sumPuntos;
+  setInterval(jugar, 50);
+  setInterval(createEnemies, 1250);
+  setInterval(sumarPuntos, 2000);
   setInterval(reducirFuel, 1000);
 };
 

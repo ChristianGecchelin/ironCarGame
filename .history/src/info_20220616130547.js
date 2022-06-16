@@ -10,14 +10,10 @@ info.appendChild(lives);
 let puntuacion = document.createElement("p");
 puntuacion.setAttribute("class", "information");
 info.appendChild(puntuacion);
-fuel.innerText = `Fuel: 100`;
-lives.innerText = `Lives: 3`;
+fuel.innerText = `Fuel: ${player.fuel}`;
+lives.innerText = `Lives: ${player.lives}`;
 puntuacion.innerText = `${points} Puntos`;
 /* let mu = document.createElement("img");
 mu.setAttribute("class", "musica");
 mu.setAttribute("src", "./images/altavoz.png");
 infoContainer.appendChild(mu); */
-let gameOver = document.querySelector(".game-over");
-
-let puntuacionFinal = document.querySelector("#score");
-puntuacionFinal.innerText = `Puntuación Final ~ ${points}`;

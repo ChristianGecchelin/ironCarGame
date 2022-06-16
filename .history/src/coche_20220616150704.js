@@ -53,7 +53,6 @@ class Objeto {
           gameOver.classList.remove("hidden");
         }
       } else {
-        jugando = false;
         detenerSonido(mainSound);
         detenerJuego();
         puntuacionFinal.innerText = `Puntuación Final ~ ${this.points}`;

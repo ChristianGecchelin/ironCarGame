@@ -46,17 +46,11 @@ class Objeto {
           lives.innerText = `Vidas: ${this.lives}`;
           fuel.innerText = `Fuel: ${this.fuel}`;
         } else if (objeto.id === 4) {
-          jugando = false;
           detenerSonido(mainSound);
-          detenerJuego();
-          puntuacionFinal.innerText = `Puntuación Final ~ ${this.points}`;
           gameOver.classList.remove("hidden");
         }
       } else {
-        jugando = false;
         detenerSonido(mainSound);
-        detenerJuego();
-        puntuacionFinal.innerText = `Puntuación Final ~ ${this.points}`;
         gameOver.classList.remove("hidden");
       }
     } else if (objeto.y > 600) {

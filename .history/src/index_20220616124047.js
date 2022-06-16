@@ -29,7 +29,7 @@ bossImage.src = "./images/inicio.png";
 let ambulanceImage = new Image();
 ambulanceImage.src = "./images/ambulance.png";
 
-const createObjects = () => {
+const createEnemies = () => {
   let randomNumber = Math.floor(Math.random() * (10 - 1) + 1);
   if (randomNumber === 3) {
     const boss = new Objeto(
@@ -83,14 +83,6 @@ const jugar = () => {
     player.detectarColision(enemy);
   }
 };
-let jugando = true;
-const detenerJuego = () => {
-  debugger;
-  if (!jugando) {
-    clearInterval(iniciarJuego);
-    clearInterval(sumPuntos);
-  }
-};
 
 const moverPlayer = (e) => {
   player.borrar();
@@ -112,28 +104,13 @@ const sumarPuntos = () => {
   player.points += 100;
   puntuacion.innerText = `${player.points} Puntos`;
 };
-const reducirFuel = () => {
-  if (player.fuel > 0) {
-    player.fuel -= 5;
-  } else {
-    debugger;
-    detenerSonido(mainSound);
-    jugando = false;
-    detenerJuego();
-    puntuacionFinal.innerText = `Puntuación Final ~ ${player.points}`;
-    gameOver.classList.remove("hidden");
-  }
-  fuel.innerText = `Fuel: ${player.fuel}`;
-};
-let iniciarJuego = setInterval(jugar, 50);
-let sumPuntos = setInterval(sumarPuntos, 2000);
+
 //Funcion que se ejecuta con la carga de pagina
 const cargaInicial = () => {
   player.dibujar();
-  iniciarJuego;
-  setInterval(createObjects, 1250);
-  sumPuntos;
-  setInterval(reducirFuel, 1000);
+  setInterval(jugar, 50);
+  setInterval(createEnemies, 1250);
+  setInterval(sumarPuntos, 2000);
 };
 
 window.addEventListener("load", cargaInicial);
